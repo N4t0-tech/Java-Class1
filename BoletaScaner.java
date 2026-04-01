@@ -1,16 +1,36 @@
-public class Boleta {
+import java.util.Scanner;
+
+public class BoletaScaner {
     public static void main(String[] args) {
-        System.out.println("== Una boleta simple ===");
+        Scanner teclado = new Scanner(System.in);
+
+        teclado.nextLine(); // Limpiar el buffer del teclado
+        System.out.println("========================");
+        System.out.println("== Almacen Javalimos ===");
+        System.out.println("========================");
         // ==========
         // PRDUCTOS
         // ==========
-        String producto1 = "Pan";
-        int precio1 = 1000;
-        int cantidad1 = 2;
+        // ========== Producto 1 ==========
+        System.out.print("\nIngrese el nombre del producto 1: ");
+        String producto1 = teclado.next();
 
-        String producto2 = "Leche";
-        int precio2 = 1500;
-        int cantidad2 = 3;
+        System.out.print("Ingrese el precio unitario del producto 1: ");
+        int precio1 = teclado.nextInt();
+
+        System.out.print("Ingrese la cantidad del producto 1: ");
+        int cantidad1 = teclado.nextInt();
+
+        // ========== Producto 2 ==========
+
+        System.out.print("Ingrese el nombre del producto 2: ");
+        String producto2 = teclado.next();
+
+        System.out.print("Ingrese el precio unitario del producto 2: ");
+        int precio2 = teclado.nextInt();
+
+        System.out.print("Ingrese la cantidad del producto 2: ");
+        int cantidad2 = teclado.nextInt();
 
         // calculos 
 
@@ -24,7 +44,7 @@ public class Boleta {
 
         double totalPagar = subtotal + iva;
 
-        // imprimir 
+        // === imprimir ===
         System.out.println("detalle de la boleta:");
         System.out.println("Producto: " + producto1);
         System.out.println("Precio unitario: $" + precio1);
